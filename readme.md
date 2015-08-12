@@ -7,6 +7,7 @@
 **Links**
 
  - [Concept](https://github.com/HumaneWolf/RiotAPIChallenge2/blob/master/docs/concept.md)
- - [Concept](https://github.com/HumaneWolf/RiotAPIChallenge2/blob/master/docs/me.md)
+ - [How it is done](https://github.com/HumaneWolf/RiotAPIChallenge2/blob/master/docs/how.md)
  - [Documentation](https://github.com/HumaneWolf/RiotAPIChallenge2/tree/master/docs)
+ - [Me](https://github.com/HumaneWolf/RiotAPIChallenge2/blob/master/docs/me.md)
  - [Riot.txt](https://github.com/HumaneWolf/RiotAPIChallenge2/blob/master/riot.txt)
