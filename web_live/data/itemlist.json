@@ -1,0 +1,43 @@
+{  
+    "changed":{  
+        "1058": "Needlessly Large Rod",
+        "3089": "Rabadon's Deathcap",
+        "3157": "Zhonya's Hourglass",
+        "3285": "Luden's Echo",
+        "3116": "Rylai's Crystal Scepter",
+        "3003": "Archangel's Staff",
+        "3040": "Seraph's Embrace",
+        "3027": "Rod of Ages",
+        "3136": "Haunting Guise",
+        "3151": "Liandry's Torment",
+        "3135": "Void Staff",
+        "3115": "Nashor's Tooth",
+        "3152": "Will of the Ancients",
+        "3165": "Morellonomicon",
+        "3174": "Athene's Unholy Grail",
+        "1026": "Blasting Wand"
+    },
+    "other":[  
+        3001,
+        3124,
+        3146,
+        3025,
+        3092,
+        3078,
+        3023,
+        3504,
+        1056,
+        3060,
+        3100,
+        3041
+    ],
+    "parts":[  
+        3145,
+        3057,
+        3113,
+        1052,
+        3098,
+        3303,
+        3191
+    ]
+}

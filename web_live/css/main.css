@@ -1,0 +1,244 @@
+/* GENERAL */
+
+body {
+	background-image: url(../img/bg-default.png);
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-color: #000000;
+	font-family: "Helvetica", Arial;
+}
+
+.wrapper {
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.sheader, .menu, .content, .footer {
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+.sheader, .content, .footer {
+	margin-top: 10px;
+}
+
+p, h3, .content img {
+	margin-right: 20px;
+	margin-left: 20px;
+}
+
+h3 {
+	text-align: center;
+}
+
+/* HEADER */
+
+.sheader {
+	height: 200px;
+}
+
+.sheader .logo img {
+	height: 200px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.sheader .logo {
+	width: 30%;
+	height: 200px;
+	float: left;
+}
+
+.sheader .title {
+	width: 70%;
+	height: 200px;
+	float: left;
+}
+
+.sheader .title h1 {
+	margin-top: 60px;
+}
+
+/* MENU */
+
+.menu {
+	height: 50px;
+}
+
+.menu .button {
+	float: left;
+	width: 33%;
+	height: 50px;
+	text-align: center;
+	font-size: 1.5em;
+	line-height: 50px;
+}
+
+.menu a {
+	color: #000000;
+	text-decoration: none;
+	transition: linear 0.2s;
+	-o-transition: linear 0.2s;
+	-webkit-transition: linear 0.2s;
+	-moz-transition: linear 0.2s;
+	-ie-transition: linear 0.2s;
+}
+
+.menu a:hover, .menu a:focus {
+	color: #7f8c8d;
+}
+
+
+/* CONTENT */
+
+.content {
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.better {
+	color: #17733D;
+	font-weight: bolder;
+}
+
+.worse {
+	color: #9C1E11;
+	font-weight: bolder;
+}
+
+.pie {
+	width: 427px;
+	height: 420px;
+}
+
+/* Champ list */
+
+.content .champlist {
+	margin-left: auto;
+	margin-right: auto;
+	width: 820px;
+}
+.content .champ {
+	display: inline-block;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.content .champ img {
+	display: block;
+	width: 120px;
+	height: 120px;
+}
+
+.content .champ a {
+	text-decoration: none;
+	color: #000000;
+	font-weight: bolder;
+}
+
+/* Champ profile */
+
+.champprofile {
+	width: 750px;
+	margin-left: 125px;
+	margin-right: 125px;
+	margin-bottom: 15px;
+	height: 120px;
+}
+
+.champprofile .pic {
+	height: 120px;
+	width: 120px;
+	float: left;
+}
+
+.champprofile .pro {
+	height: 120px;
+	width: 510px;
+	margin-right: 120px;
+	float: left;
+	text-align: center;
+}
+
+.champprofile .pro h3 {
+	line-height: 50px;
+}
+
+.champprofile .pro p {
+	line-height: 20px;
+}
+
+/* About */
+
+.twitter {
+	float: right;
+	width: 225px;
+}
+
+
+/* FOOTER */
+
+.footer {
+	padding-top: 1px;
+	padding-bottom: 1px;
+}
+
+.footer p {
+	font-size: 0.9em;
+}
+
+
+/* TABLE */
+
+table {
+	margin-left: 20px;
+	margin-right: 20px;
+	width: calc(100% - 40px);
+}
+
+table td {
+	border: 1px solid;
+	text-align: center;
+}
+
+table thead .header {
+	background-repeat: no-repeat;
+	background-position: center right;
+	background-image: url(both.gif);
+}
+
+table thead .header.headerSortDown {
+	background-image: url(up.gif);
+}
+
+table thead .header.headerSortUp {
+	background-image: url(down.gif);
+}
+
+table .img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+table img {
+	border: solid 2px;
+}
+
+table .next {
+	border-left: 2px solid;
+}
+
+.wr {
+	background-color: rgba(227, 161, 161, 0.3);
+}
+
+.pop {
+	background-color: rgba(161, 189, 227, 0.3);
+}
+
+table .thinified {
+	width: 40%;
+}
