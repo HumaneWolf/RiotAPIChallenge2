@@ -8,6 +8,7 @@ $items = json_decode($items, TRUE);
 if (isset($_GET['champ'])) { //CHAMP PROFILE
 	if ($champ = @file_get_contents("data/champs/" . intval($_GET['champ']) . ".json")) {
 		if ($champ = json_decode($champ, TRUE)) {
+			$pagetitle = $champ['name'];
 			$javascript = '
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 			<script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
@@ -264,6 +265,7 @@ if (isset($_GET['champ'])) { //CHAMP PROFILE
 		$pagecontent .= '<h3>Invalid champion</h3>';
 	}
 } elseif (isset($_GET['items'])) { //ITEM LIST
+	$pagetitle = "Items";
 	if ($itemstats = @file_get_contents("data/items.json")) {
 		if ($itemstats = json_decode($itemstats, TRUE)) {
 			$javascript = '
@@ -343,6 +345,7 @@ if (isset($_GET['champ'])) { //CHAMP PROFILE
 		$pagecontent .= '<h3>Failed to load items.</h3>';
 	}
 } elseif (isset($_GET['about'])) { //ABOUT PAGE
+	$pagetitle = "About";
 	$pagecontent = '
 	<div class="twitter">
 		<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/HumaneWolf" data-widget-id="536167276769464322">Tweets av @HumaneWolf</a>
@@ -483,7 +486,13 @@ if (isset($_GET['champ'])) { //CHAMP PROFILE
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>AP Item Changes</title>
+	<title>
+	<?php
+	if (isset($pagetitle)) {
+		echo $pagetitle . ' - ';
+	}
+	?>
+	AP Item Changes</title>
 	<?php echo $javascript; ?>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
