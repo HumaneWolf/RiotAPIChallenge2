@@ -38,8 +38,6 @@ while ($c = $champs->fetch_assoc()) { //Loop through all champs in the database 
 	$imgname = str_replace(" ", "", $c['name']);
 	$imgname = str_replace("'", "", $imgname);
 
-	$cinfo['image'] = 'http://ddragon.leagueoflegends.com/cdn/5.15.1/img/champion/' . $imgname . '.png';
-
 	//
 	// 5.11
 	//
@@ -57,7 +55,7 @@ while ($c = $champs->fetch_assoc()) { //Loop through all champs in the database 
 
 	$otheritems = $otheritems->fetch_assoc();
 
-	$cinfo['5.11']['stats']['winrate'] = $otheritems['winrate'];
+	$cinfo['5.11']['stats']['winrate'] = $otheritems['winrate'] * 100;
 	$cinfo['5.11']['stats']['dmgtochamps'] = $otheritems['dmgtochamps'];
 
 	$stats['other'] = $otheritems['other'];
@@ -75,18 +73,45 @@ while ($c = $champs->fetch_assoc()) { //Loop through all champs in the database 
 
 		$stats['total'] = $stats['total'] + intval($changed['amount']);
 
-		$cinfo['5.11']['items']['changed'][$k]['winrate'] = $changed['winrate'];
+		if (isset($changed['winrate']) && $changed['winrate'] != 0) {
+			$cinfo['5.11']['items']['changed'][$k]['winrate'] = $changed['winrate'] * 100;
+		} else {
+			$cinfo['5.11']['items']['changed'][$k]['winrate'] = 0;
+		}
+		
 	}
 
 	//determine the popularity of each changed ap item.
 	foreach ($items as $k => $v) {
-		$cinfo['5.11']['items']['changed'][$k]['pop'] = (floatval($stats['changed'][$k]) / $stats['total']) * 100;
+		$cinfo['5.11']['items']['changed'][$k]['pop'] = (floatval($stats['changed'][$k]) / $stats['total']);
+		if (!isset($cinfo['5.11']['items']['changed'][$k]['pop']) || $cinfo['5.11']['items']['changed'][$k]['pop'] == 0) {
+			$cinfo['5.11']['items']['changed'][$k]['pop'] = 0;
+		} else {
+			$cinfo['5.11']['items']['changed'][$k]['pop'] = $cinfo['5.11']['items']['changed'][$k]['pop'] * 100;
+		}
 	}
 
 
-	$cinfo['5.11']['items']['other'] = (floatval($stats['other']) / $stats['total']) * 100; //percentage other items
-	$cinfo['5.11']['items']['otherap'] = (floatval($stats['otherap']) / $stats['total']) * 100; //percentage other ap items
-	$cinfo['5.11']['items']['appart'] = (floatval($stats['appart']) / $stats['total']) * 100; //percentage other ap parts
+	$cinfo['5.11']['items']['other'] = (floatval($stats['other']) / $stats['total']); //percentage other items
+	if (!isset($cinfo['5.11']['items']['other']) || $cinfo['5.11']['items']['other'] == 0) {
+		$cinfo['5.11']['items']['other'] = 0;
+	} else {
+		$cinfo['5.11']['items']['other'] = $cinfo['5.11']['items']['other'] * 100;
+	}
+
+	$cinfo['5.11']['items']['otherap'] = (floatval($stats['otherap']) / $stats['total']); //percentage other items
+	if (!isset($cinfo['5.11']['items']['otherap']) || $cinfo['5.11']['items']['otherap'] == 0) {
+		$cinfo['5.11']['items']['otherap'] = 0;
+	} else {
+		$cinfo['5.11']['items']['otherap'] = $cinfo['5.11']['items']['otherap'] * 100;
+	}
+
+	$cinfo['5.11']['items']['appart'] = (floatval($stats['appart']) / $stats['total']); //percentage other items
+	if (!isset($cinfo['5.11']['items']['appart']) || $cinfo['5.11']['items']['appart'] == 0) {
+		$cinfo['5.11']['items']['appart'] = 0;
+	} else {
+		$cinfo['5.11']['items']['appart'] = $cinfo['5.11']['items']['appart'] * 100;
+	}
 
 
 	//
@@ -124,18 +149,45 @@ while ($c = $champs->fetch_assoc()) { //Loop through all champs in the database 
 
 		$stats['total'] = $stats['total'] + intval($changed['amount']);
 
-		$cinfo['5.14']['items']['changed'][$k]['winrate'] = $changed['winrate'] * 100;
+		if (isset($changed['winrate']) && $changed['winrate'] != 0) {
+			$cinfo['5.14']['items']['changed'][$k]['winrate'] = $changed['winrate'] * 100;
+		} else {
+			$cinfo['5.14']['items']['changed'][$k]['winrate'] = 0;
+		}
+		
 	}
 
 	//determine the popularity of each changed ap item.
 	foreach ($items as $k => $v) {
-		$cinfo['5.14']['items']['changed'][$k]['pop'] = (floatval($stats['changed'][$k]) / $stats['total']) * 100;
+		$cinfo['5.14']['items']['changed'][$k]['pop'] = (floatval($stats['changed'][$k]) / $stats['total']);
+		if (!isset($cinfo['5.14']['items']['changed'][$k]['pop']) || $cinfo['5.14']['items']['changed'][$k]['pop'] == 0) {
+			$cinfo['5.14']['items']['changed'][$k]['pop'] = 0;
+		} else {
+			$cinfo['5.14']['items']['changed'][$k]['pop'] = $cinfo['5.14']['items']['changed'][$k]['pop'] * 100;
+		}
 	}
 
 
-	$cinfo['5.14']['items']['other'] = (floatval($stats['other']) / $stats['total']) * 100; //percentage other items
-	$cinfo['5.14']['items']['otherap'] = (floatval($stats['otherap']) / $stats['total']) * 100; //percentage other ap items
-	$cinfo['5.14']['items']['appart'] = (floatval($stats['appart']) / $stats['total']) * 100; //percentage other ap parts
+	$cinfo['5.14']['items']['other'] = (floatval($stats['other']) / $stats['total']); //percentage other items
+	if (!isset($cinfo['5.14']['items']['other']) || $cinfo['5.14']['items']['other'] == 0) {
+		$cinfo['5.14']['items']['other'] = 0;
+	} else {
+		$cinfo['5.14']['items']['other'] = $cinfo['5.14']['items']['other'] * 100;
+	}
+
+	$cinfo['5.14']['items']['otherap'] = (floatval($stats['otherap']) / $stats['total']); //percentage other items
+	if (!isset($cinfo['5.14']['items']['otherap']) || $cinfo['5.14']['items']['otherap'] == 0) {
+		$cinfo['5.14']['items']['otherap'] = 0;
+	} else {
+		$cinfo['5.14']['items']['otherap'] = $cinfo['5.14']['items']['otherap'] * 100;
+	}
+
+	$cinfo['5.14']['items']['appart'] = (floatval($stats['appart']) / $stats['total']); //percentage other items
+	if (!isset($cinfo['5.14']['items']['appart']) || $cinfo['5.14']['items']['appart'] == 0) {
+		$cinfo['5.14']['items']['appart'] = 0;
+	} else {
+		$cinfo['5.14']['items']['appart'] = $cinfo['5.14']['items']['appart'] * 100;
+	}
 
 
 	file_put_contents("champs/" . $c['id'] . ".json", json_encode($cinfo));
@@ -165,6 +217,23 @@ foreach ($items as $k => $v) {
 
 foreach ($items as $k => $v) {
 	$iinfo['5.11'][$k]['pop'] = ($stats['changed'][$k] / $stats['total']) * 100;
+}
+
+//
+// 5.14
+//
+
+foreach ($items as $k => $v) {
+	$changed = $sql->query("SELECT COUNT(id) AS amount, AVG(win) AS winrate FROM items_514 WHERE item=" . $k);
+	$changed = $changed->fetch_assoc();
+	$stats['total'] = $stats['total'] + $changed['amount'];
+	$stats['changed'][$k] = $changed['amount'];
+
+	$iinfo['5.14'][$k]['winrate'] = $changed['winrate'] * 100;
+}
+
+foreach ($items as $k => $v) {
+	$iinfo['5.14'][$k]['pop'] = ($stats['changed'][$k] / $stats['total']) * 100;
 }
 
 file_put_contents("items/items.json", json_encode($iinfo));
