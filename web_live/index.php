@@ -36,10 +36,6 @@ if (isset($_GET['champ'])) { //CHAMP PROFILE
 				$friendly = "Chogath";
 			}
 
-			if ($friendly == "ChoGath") {
-				$friendly = "Chogath";
-			}
-
 			if ($friendly == "VelKoz") {
 				$friendly = "Velkoz";
 			}
@@ -444,10 +440,6 @@ if (isset($_GET['champ'])) { //CHAMP PROFILE
 
 				if ($friendly == "Fiddlesticks") {
 					$friendly = "FiddleSticks";
-				}
-
-				if ($friendly == "ChoGath") {
-					$friendly = "Chogath";
 				}
 
 				if ($friendly == "ChoGath") {
