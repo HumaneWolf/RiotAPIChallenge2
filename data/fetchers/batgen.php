@@ -1,4 +1,5 @@
 <?php
+//Generate the batch files to run each PHP files, for simplicity. Edit version in put contents.
 
 $servers = array("BR", "EUNE", "EUW", "KR", "LAN", "LAS", "NA", "OCE", "TR", "RU");
 
