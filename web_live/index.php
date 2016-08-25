@@ -478,13 +478,7 @@ if (isset($_GET['champ'])) { //CHAMP PROFILE
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>
-	<?php
-	if (isset($pagetitle)) {
-		echo $pagetitle . ' - ';
-	}
-	?>
-	AP Item Changes</title>
+	<title>AP Item Changes</title>
 	<?php echo $javascript; ?>
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
@@ -492,7 +486,6 @@ if (isset($_GET['champ'])) { //CHAMP PROFILE
 	<div class="wrapper">
 		<div class="sheader">
 			<div class="logo">
-				<img src="//humanewolf.com/assets/logo.png">
 			</div>
 			<div class="title">
 				<h1>AP Item Changes</h1>
